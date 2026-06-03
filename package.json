@@ -1,0 +1,16 @@
+{
+  "name": "pass-avantages-mericq-padelplus",
+  "version": "1.0.0",
+  "description": "Prototype Pass Avantages Mericq / Padel+ avec QR dynamique et vérification téléphone.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.3",
+    "qrcode": "^1.5.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
