@@ -1,0 +1,82 @@
+:root {
+  --navy: #1d2237;
+  --purple: #6654e8;
+  --purple-light: #c99bf6;
+  --yellow: #ffd761;
+  --green: #16b978;
+  --red: #f05c5c;
+  --bg: #f7f2ff;
+  --card: #ffffff;
+  --muted: #6d6d7c;
+  --border: #e7e0f5;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--navy);
+  background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 65%);
+  min-height: 100vh;
+}
+a { color: var(--purple); }
+.shell {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+.pass-card, .verify-card, .content, .admin-shell {
+  width: min(760px, 100%);
+  background: rgba(255,255,255,0.92);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(45, 38, 97, 0.12);
+  padding: 32px;
+}
+.brand-row { display: flex; gap: 16px; align-items: center; margin-bottom: 26px; }
+.brand-mark {
+  width: 54px; height: 54px; border-radius: 16px;
+  display: grid; place-items: center;
+  background: var(--purple); color: white; font-weight: 900;
+  box-shadow: inset -8px -8px 0 rgba(0,0,0,0.08);
+}
+.eyebrow { margin: 0 0 4px; color: var(--purple); text-transform: uppercase; letter-spacing: .16em; font-weight: 700; font-size: 12px; }
+h1 { margin: 0; font-size: clamp(32px, 6vw, 58px); color: var(--purple); line-height: .95; }
+h2 { margin: 0 0 12px; font-size: 18px; }
+.identity { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 20px 0; margin-bottom: 20px; }
+.name { font-size: 32px; font-weight: 800; margin: 0 0 6px; }
+.role, .muted { color: var(--muted); margin: 0 0 12px; }
+.status { display: inline-block; border-radius: 999px; padding: 8px 12px; font-weight: 800; font-size: 13px; }
+.status.ok { background: #dff7ec; color: #087343; }
+.status.ko { background: #ffe2e2; color: #9e1a1a; }
+.advantages { margin: 22px 0; }
+.advantages ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.advantages li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 16px; background: #f6f2ff; border-radius: 16px; }
+.advantages li span { color: var(--muted); font-weight: 700; }
+.advantages.compact li { background: #fff; border: 1px solid var(--border); }
+.primary { width: 100%; border: 0; border-radius: 16px; padding: 16px 18px; background: var(--purple); color: white; font-weight: 900; font-size: 16px; cursor: pointer; }
+.primary:hover { filter: brightness(.95); }
+.qr-block { text-align: center; margin-top: 24px; padding: 22px; border-radius: 22px; background: #fbf9ff; border: 1px dashed var(--purple-light); }
+.qr-block img { width: 220px; max-width: 80%; background: white; padding: 12px; border-radius: 18px; }
+.qr-info, .phone-check { margin: 8px 0 12px; }
+.phone-check strong { color: var(--purple); font-size: 24px; letter-spacing: .12em; }
+.test-link { display: inline-block; margin-top: 12px; font-weight: 800; }
+.hidden { display: none; }
+.note { font-size: 13px; color: var(--muted); margin-top: 18px; }
+.pin-form { margin-top: 20px; display: grid; gap: 12px; }
+.pin-form label { font-weight: 800; }
+.pin-form input { font-size: 26px; letter-spacing: .4em; text-align: center; border: 2px solid var(--border); border-radius: 14px; padding: 14px; }
+.verify-card.success { border-color: #a6eccc; }
+.verify-card.error { border-color: #ffc8c8; }
+.footer { min-height: 60px; display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--muted); font-size: 14px; }
+.content { margin: 40px auto; line-height: 1.6; }
+.admin-shell { margin: 40px auto; width: min(1100px, calc(100% - 32px)); }
+table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; margin: 16px 0 28px; }
+th, td { text-align: left; padding: 12px; border-bottom: 1px solid var(--border); font-size: 14px; }
+th { background: #f3ecff; }
+@media (max-width: 640px) {
+  .pass-card, .verify-card, .content, .admin-shell { padding: 22px; border-radius: 20px; }
+  .advantages li { flex-direction: column; gap: 4px; }
+  .name { font-size: 26px; }
+}
